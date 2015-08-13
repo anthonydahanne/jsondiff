@@ -5,13 +5,15 @@
 	<groupId>com.github.foodev</groupId>
 	<artifactId>jsondiff</artifactId>
 	<packaging>jar</packaging>
-	<version>2.0.0-SNAPSHOT</version>
+	<version>2.0.0-TC</version>
 	<name>Foodev JSONDiff Parent</name>
 	<url>https://github.com/algesten/jsondiff/</url>
 	<description>Structural JSON diff/patch tool</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<terracotta-os-snapshots-url>http://nexus.terracotta.eur.ad.sag/content/repositories/terracotta-os-snapshots</terracotta-os-snapshots-url>
+		<terracotta-os-releases-url>http://nexus.terracotta.eur.ad.sag/content/repositories/terracotta-os-releases</terracotta-os-releases-url>
 	</properties>
 
 	<scm>
@@ -99,17 +101,16 @@
 
 	<distributionManagement>
 		<repository>
-			<id>algesten-github-repo</id>
-			<url>file://${basedir}/site/maven2/releases</url>
+			<id>terracotta-os-releases</id>
+			<name>Terracotta OS Releases Repository</name>
+			<url>${terracotta-os-releases-url}</url>
 		</repository>
 		<snapshotRepository>
-			<id>algesten-github-repo</id>
-			<url>file://${basedir}/site/maven2/snapshots</url>
+			<id>terracotta-os-snapshots</id>
+			<uniqueVersion>false</uniqueVersion>
+			<name>Terracotta OS Snapshots Repository</name>
+			<url>${terracotta-os-snapshots-url}</url>
 		</snapshotRepository>
-		<site>
-			<id>algesten-github-repo</id>
-			<url>file://${basedir}/site/jsondiff</url>
-		</site>
 	</distributionManagement>
 
 </project>
